@@ -16,6 +16,19 @@ exec('/home/sakura_account/local/bin/git pull origin master 2>&1 1>/dev/null', $
 # さくらインターネットとGitHubの設定シナリオ
 - さくらインターネットに既存のフォルダー下の
 
+## 手順
+- GitHubに、管理したいプロジェクト用のリポジトリーを作成しておく
+- 管理したいプロジェクトのフォルダー内で以下を実行
+
+```
+git init
+git add.
+git commit -m 'first commit.'
+git remote add origin git@github.com:<ユーザー名>/<リポジトリー名>.git
+git push -u origin master
+```
+
+以上で、既存のプロジェクトをGitHubにプッシュできる
 
 GitHubに
 
