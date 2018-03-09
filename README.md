@@ -13,10 +13,27 @@ exec('/home/sakura_account/local/bin/git pull origin master 2>&1 1>/dev/null', $
 
 `git pull origin master`がプルをする処理です。その後ろの`2>&1 1>/dev/null`は、標準出力は捨てて、標準エラー出力を標準出力にリダイレクトさせて変数$outputで受け取るための設定です。理屈は[こちら](http://am1tanaka.hatenablog.com/entry/2018/03/09/143501)。
 
-# さくらインターネットとGitHubの設定シナリオ
-- さくらインターネットに既存のフォルダー下の
+# WPサーバーとGitHubの設定シナリオ
+- WPサーバーに練習用のフォルダーと中身を作成しておく
+- WPサーバーからGitHubへアクセスできるようにSSH関連のファイルを設定する
+- GitHub上でファイルを変更して、WPサーバーで以下を実行してpullできることを確認する
+
+```
+git pull origin master
+```
+
+- 練習用のフォルダーにwebhookを処理するためのPHPファイルをおく
+- GitHubにpushのwebhookを設定
+- 作業用PCに環境をクローン
+- 変更をして、プッシュ
+- WPサーバーが自動更新されているかを確認
+- master以外のブランチにプッシュ
+- WPサーバーへの影響がないことを確認
+- webhookの入り口にアクセスして、エラーが出ることを確認
 
 ## 手順
+### プロジェクトをGitHubにプッシュ
+- プロジェクトのある場所から、GitHubにSSHアクセスできるように設定
 - GitHubに、管理したいプロジェクト用のリポジトリーを作成しておく
 - 管理したいプロジェクトのフォルダー内で以下を実行
 
@@ -28,10 +45,11 @@ git remote add origin git@github.com:<ユーザー名>/<リポジトリー名>.g
 git push -u origin master
 ```
 
-以上で、既存のプロジェクトをGitHubにプッシュできる
+以上で、既存のプロジェクトをGitHubにプッシュできる。
 
-GitHubに
-
+# 作業
+- ブランチがmasterであることの確認を実行前に行う
+- エラーが
 
 # 参考URL
 - https://developer.github.com/webhooks/
