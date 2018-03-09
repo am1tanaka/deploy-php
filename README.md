@@ -49,7 +49,7 @@ git push -u origin master
 
 # 作業
 - ブランチがmasterであることの確認を実行前に行う
-- エラーが
+- エラーが発生したら、管理者にエラー内容を送信する設定をPHPにする
 
 # 参考URL
 - https://developer.github.com/webhooks/
